@@ -9,26 +9,22 @@ import City from "../components/City";
 
 export default function Level_1(props) {
 
-  //  const {nodes, materials, animations} = useGLTF("./asset/model/level1.glb");
-  //  const object = useGLTF("./asset/model/level1.glb");
-  //  const { ref,actions} = useAnimations(animations)
+    const {nodes, materials, animations} = useGLTF("./asset/model/level_1.glb");
+    //  const object = useGLTF("./asset/model/level1.glb");
+    //  const { ref,actions} = useAnimations(animations)
     const [actionsArray, setActionsArray] = useState([])
     const pause = useSelector((state) => state.pause.value);
-const ref = useRef();
-
-
+    const ref = useRef();
 
 
     useEffect(() => {
         if (props.actionsArray) {
             setActionsArray(props.actionsArray)
         }
-      //  console.log(nodes)
+          console.log(nodes)
     }, [])
 
     useEffect(() => {
-
-
 
 
     }, [])
@@ -52,20 +48,26 @@ const ref = useRef();
     };
 
 // Пример: 5 рядов и 5 колонн зданий с расстоянием 500 между ми
-   const cityData = generateCityData(5, 1, 150);
+    const cityData = generateCityData(5, 1, 150);
 //console.log(cityData)
-
-
 
 
     // Добавляем вращение HDRI окружения
 
 
-
     return <>
-        <group {...props} ref={ref}  >
-            <RigidBody  colliders="cuboid" type="fixed">
+        <group {...props} ref={ref}>
+            <RigidBody colliders="trimesh" type="fixed">
+                <group scale={3}>
+                    <mesh geometry={nodes.platform.geometry} material={materials['Material']} />
+                    <mesh geometry={nodes.block.geometry} material={materials['Материал']} />
+                    <mesh geometry={nodes.block_2.geometry} material={materials['Материал']} />
+                    {
+                       // <primitive object={nodes.platform}/>
+                        //<primitive object={nodes.block}/>
+                    }
 
+                </group>
             </RigidBody>
 
 

@@ -3,13 +3,14 @@
     "id": 1,
     "name": "",
     "img": "./asset/img/wheel-three.png",
-    "model": "./asset/model/wheel-tree.glb",
+    "model": "./asset/model/ball_1.glb",
     "price": 100,
-    "speed": 5,
+    "speed": 10,
     "control": 1,
     "friction": 2,
     "mass": 1,
-    "position": [0,0,0]
+    "position": [0,0,0],
+    "jump": 1
 
   },
   {

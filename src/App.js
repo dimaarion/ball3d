@@ -21,7 +21,7 @@ import Garage from "./components/Garage";
 import garage from "./assets/garage.json"
 import level from "./assets/level.json"
 import {Physics} from '@react-three/rapier'
-import Car2 from "./components/Car2";
+import Player from "./balls/Player";
 
 
 export default function App() {
@@ -105,19 +105,20 @@ export default function App() {
                         <Cloud seed={10} bounds={50} volume={80} position={[50, 100, 80]} />
                     </Clouds>
                     <Environment preset="city" />
-                    <Sky distance={1000} />
+                    <Sky distance={2000} />
                     <KeyboardControls map={keyboardMap}>
 
-                        <Physics debug={false} gravity={[0, -20, 0]} paused={pause}>
+                        <Physics debug={false} gravity={[0, -30, 0]} paused={pause}>
                             {level.filter((el) => el.level === 1).map((el) => <Platform key={el.level + "platform"}
                                                                                         url={el.model}
                                                                                         position={el.position}
                                                                                         actionsArray={el.animations}/>)}
-                            {garage.filter((el) => el.id === 1 && !restart).map((el) => <Car2 url={el.model}
+                            {garage.filter((el) => el.id === 1 && !restart).map((el) => <Player url={el.model}
                                                                                                  position={el.position}
                                                                                                  key={el.id}
                                                                                                  friction={el.friction}
                                                                                                  mass={el.mass}
+                                                                                                 jump={el.jump}
                                                                                                  control={el.control}
                                                                                                  speed={el.speed}/>)}
 
@@ -141,5 +142,6 @@ export default function App() {
     )
 }
 useGLTF.preload([
-   './asset/model/car.glb'
+    './asset/model/level_1.glb',
+    'public/asset/model/ball_1.glb'
 ]);
