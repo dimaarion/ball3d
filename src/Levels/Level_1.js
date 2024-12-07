@@ -1,11 +1,10 @@
-import {routable} from "../actions";
 import {RigidBody} from "@react-three/rapier";
-import {Environment, Gltf, useAnimations, useGLTF} from "@react-three/drei";
+import {useGLTF} from "@react-three/drei";
 import {useEffect, useLayoutEffect, useRef, useState} from "react";
 import {useSelector} from "react-redux";
-import {useFrame} from "@react-three/fiber";
-import CityBackground from "../components/CityBackground";
-import City from "../components/City";
+import Play from "../components/Play";
+import Plane from "../components/Plane";
+
 
 export default function Level_1(props) {
 
@@ -56,10 +55,11 @@ export default function Level_1(props) {
 
 
     return <>
-        <group {...props} ref={ref}>
-            <RigidBody colliders="trimesh" type="fixed">
+        <group>
+            <RigidBody ref={ref} colliders="trimesh" type="fixed">
                 <group scale={3}>
-                    <mesh geometry={nodes.platform.geometry} material={materials['Material']} />
+                    <mesh geometry={nodes.Cube.geometry} material={materials['Material']} />
+                    <mesh geometry={nodes.Cube_1.geometry} material={materials['Материал.002']} />
                     <mesh geometry={nodes.block.geometry} material={materials['Материал']} />
                     <mesh geometry={nodes.block_2.geometry} material={materials['Материал']} />
                     {
@@ -69,6 +69,9 @@ export default function Level_1(props) {
 
                 </group>
             </RigidBody>
+
+            <Plane position={[0,-150,0]} />
+
 
 
         </group>
