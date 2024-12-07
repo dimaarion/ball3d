@@ -22,6 +22,7 @@ import garage from "./assets/garage.json"
 import level from "./assets/level.json"
 import {Physics} from '@react-three/rapier'
 import Player from "./balls/Player";
+import CityBackground from "./components/CityBackground";
 
 
 export default function App() {
@@ -33,18 +34,10 @@ export default function App() {
     const pauseOpen = useSelector((state) => state.pauseOpen.value);
     const sound = useRef();
 
-    const Background = () => {
-        const {scene} = useThree();
 
-        useEffect(() => {
-            const loader = new THREE.TextureLoader();
-            loader.load('./asset/texture/city.png', (texture) => {
-                scene.background = texture; // Устанавливаем текстуру фоном
-            });
-        }, [scene]);
 
-        return null;
-    };
+    const textureLoader = new THREE.TextureLoader();
+    const texture = textureLoader.load('./asset/texture/plane6.jpg');
 
     const keyboardMap = [
         {name: "forward", keys: ["ArrowUp", "w", "W"]},
@@ -106,7 +99,9 @@ export default function App() {
                     </Clouds>
 
                     <Sky distance={2000} />
-                    <Environment  ground={{scale:500,height:200,radius:2000}}  files={"./asset/texture/plane5.jpg"} />
+                    {
+                        <Environment preset={"city"} />
+                    }
                     <KeyboardControls map={keyboardMap}>
 
                         <Physics debug={false} gravity={[0, -30, 0]} paused={pause}>
@@ -135,7 +130,7 @@ export default function App() {
                             distance={music}
                         />
                     </KeyboardControls>
-<OrbitControls />
+<CityBackground file={'./asset/texture/plane6.jpg'}/>
                 </Canvas>
             </StartGame>
 

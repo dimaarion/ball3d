@@ -8,7 +8,7 @@ export default function CityBackground(props) {
         const { scene } = useThree();
         useEffect(() => {
             const loader = new THREE.TextureLoader();
-            loader.load('./asset/texture/city.png', (texture) => {
+            loader.load('./asset/texture/plane6.jpg', (texture) => {
                 scene.background = texture; // Устанавливаем текстуру фоном
             });
         }, [scene]);
@@ -21,7 +21,7 @@ export default function CityBackground(props) {
 
 
     return (
-        <mesh position={[0,50,0]}>
+        <mesh position={[0,0,0]}>
             <sphereGeometry args={[600, 50, 50]} />
             <meshBasicMaterial map={texture} side={THREE.BackSide} />
         </mesh>
