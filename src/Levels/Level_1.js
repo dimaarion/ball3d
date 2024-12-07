@@ -55,7 +55,7 @@ export default function Level_1(props) {
 
 
     return <>
-        <group>
+        <group position={props.position} >
             <RigidBody ref={ref} colliders="trimesh" type="fixed">
                 <group scale={3}>
                     <mesh geometry={nodes.Cube.geometry} material={materials['Material']} />
@@ -70,7 +70,7 @@ export default function Level_1(props) {
                 </group>
             </RigidBody>
 
-            <Plane position={[0,-150,0]} />
+
 
 
 

@@ -9,7 +9,7 @@
     "control": 1,
     "friction": 2,
     "mass": 1,
-    "position": [0,0,0],
+    "position": [0,60,0],
     "jump": 1
 
   },

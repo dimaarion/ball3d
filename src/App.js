@@ -104,8 +104,9 @@ export default function App() {
                         <Cloud seed={10} bounds={50} volume={80} position={[40, 100, -80]} />
                         <Cloud seed={10} bounds={50} volume={80} position={[50, 100, 80]} />
                     </Clouds>
-                    <Environment preset="city" />
+
                     <Sky distance={2000} />
+                    <Environment  ground={{scale:500,height:200,radius:2000}}  files={"./asset/texture/plane5.jpg"} />
                     <KeyboardControls map={keyboardMap}>
 
                         <Physics debug={false} gravity={[0, -30, 0]} paused={pause}>
