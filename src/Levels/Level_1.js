@@ -20,7 +20,7 @@ export default function Level_1(props) {
         if (props.actionsArray) {
             setActionsArray(props.actionsArray)
         }
-          console.log(nodes)
+
     }, [])
 
     useEffect(() => {
@@ -55,21 +55,24 @@ export default function Level_1(props) {
 
 
     return <>
-        <group position={props.position} >
+        <group position={props.position} scale={3}>
             <RigidBody ref={ref} colliders="trimesh" type="fixed">
-                <group scale={3}>
-                    <mesh geometry={nodes.Cube.geometry} material={materials['Material']} />
-                    <mesh geometry={nodes.Cube_1.geometry} material={materials['Материал.002']} />
-                    <mesh geometry={nodes.block.geometry} material={materials['Материал']} />
-                    <mesh geometry={nodes.block_2.geometry} material={materials['Материал']} />
-                    {
+                <group>
+
+                    <mesh geometry={nodes.platform_1.geometry} material={materials["Material"]} />
+                    <mesh geometry={nodes.platform_2.geometry} material={materials["Материал"]} />
+                    <mesh geometry={nodes.platform_3.geometry} material={materials["Материал.001"]} />
+                    {  //  <mesh geometry={nodes.block_2.geometry} material={materials['Материал']} />
+
                        // <primitive object={nodes.platform}/>
                         //<primitive object={nodes.block}/>
                     }
 
                 </group>
             </RigidBody>
-
+<RigidBody colliders="trimesh" type="fixed">
+    <mesh geometry={nodes.point.geometry} material={materials['Материал.001']} />
+</RigidBody>
 
 
 

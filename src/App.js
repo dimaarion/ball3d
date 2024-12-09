@@ -36,8 +36,7 @@ export default function App() {
 
 
 
-    const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load('./asset/texture/plane6.jpg');
+
 
     const keyboardMap = [
         {name: "forward", keys: ["ArrowUp", "w", "W"]},
@@ -91,16 +90,13 @@ export default function App() {
                 <Canvas shadows camera={{fov: 45}}>
 
                     <hemisphereLight intensity={0.2} />
-                    <spotLight  angle={0.4} penumbra={1} position={[-50, 50, 2.5]} castShadow shadow-bias={-0.00001} />
-                    <directionalLight  color="red" position={[-10, 50, 0]} intensity={1.5} />
-                    <Clouds material={THREE.MeshBasicMaterial}>
-                        <Cloud seed={10} bounds={50} volume={80} position={[40, 100, -80]} />
-                        <Cloud seed={10} bounds={50} volume={80} position={[50, 100, 80]} />
-                    </Clouds>
 
-                    <Sky distance={2000} />
+                    <directionalLight   position={[-10, 50, 0]} intensity={2} />
+
+<Sky />
+
                     {
-                        <Environment preset={"city"} />
+                       // <Environment  ground={{scale:500,radius:5000,height:1000}} files={'./asset/texture/plane6.jpg'} />
                     }
                     <KeyboardControls map={keyboardMap}>
 
@@ -130,7 +126,7 @@ export default function App() {
                             distance={music}
                         />
                     </KeyboardControls>
-<CityBackground file={'./asset/texture/plane6.jpg'}/>
+
                 </Canvas>
             </StartGame>
 
