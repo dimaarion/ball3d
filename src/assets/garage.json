@@ -3,7 +3,7 @@
     "id": 1,
     "name": "",
     "img": "./asset/img/wheel-three.png",
-    "model": "./asset/model/ball_1.glb",
+    "model": "./asset/model/player.glb",
     "price": 100,
     "speed": 10,
     "control": 1,

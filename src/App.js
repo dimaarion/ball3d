@@ -93,14 +93,14 @@ export default function App() {
 
                     <directionalLight   position={[-10, 50, 0]} intensity={2} />
 
-<Sky />
+                        <Sky />
 
                     {
                        // <Environment  ground={{scale:500,radius:5000,height:1000}} files={'./asset/texture/plane6.jpg'} />
                     }
                     <KeyboardControls map={keyboardMap}>
 
-                        <Physics debug={false} gravity={[0, -30, 0]} paused={pause}>
+                        <Physics debug={false} gravity={[0, -5, 0]} paused={pause}>
                             {level.filter((el) => el.level === 1).map((el) => <Platform key={el.level + "platform"}
                                                                                         url={el.model}
                                                                                         position={el.position}
@@ -135,5 +135,6 @@ export default function App() {
 }
 useGLTF.preload([
     './asset/model/level_1.glb',
-    'public/asset/model/ball_1.glb'
+    'public/asset/model/ball_1.glb',
+    'public/asset/model/player.glb'
 ]);

@@ -1,4 +1,4 @@
-import Controller,{EcctrlAnimation} from "ecctrl";
+import Controller, {EcctrlAnimation, useGame} from "ecctrl";
 import {Gltf, useAnimations, useGLTF, useKeyboardControls} from "@react-three/drei";
 import {useEffect, useRef, useState} from "react";
 import {useFrame} from "@react-three/fiber";
@@ -10,25 +10,37 @@ export default function Player(props) {
     const [, get] = useKeyboardControls()
     const[index, setIndex] = useState(false)
 
+    const curAnimation = useGame((state) => state.curAnimation);
+    const resetAnimation = useGame((state) => state.reset);
+    const initializeAnimationSet = useGame(
+        (state) => state.initializeAnimationSet
+    );
+
+
     const animationSet = {
-        idle: 'АрматураAction',
-        walk: 'АрматураAction',
-        run: 'АрматураAction',
-        jump: 'АрматураAction',
-        jumpIdle: 'АрматураAction',
-        jumpLand: 'АрматураAction',
-        fall: 'АрматураAction', // This is for falling from high sky
-        action1: 'АрматураAction',
-        action2: 'АрматураAction',
-        action3: 'АрматураAction',
-        action4: 'АрматураAction'
+        idle: 'Idle',
+        walk: 'Walk',
+        run: 'Idle',
+        jump: 'Idle',
+        jumpIdle: 'Idle',
+        jumpLand: 'Idle',
+        fall: 'Idle', // This is for falling from high sky
+        action1: 'Walk',
+        action2: 'Walk',
+        action3: 'Walk',
+        action4: 'Walk'
     };
+
+    useEffect(() => {
+        // Initialize animation set
+        initializeAnimationSet(animationSet);
+    }, []);
 
     useEffect(()=>{
 
 
-        console.log(names)
-    },[])
+        console.log(resetAnimation)
+    },[resetAnimation])
 
 
 
@@ -41,26 +53,48 @@ setIndex(forward)
 
 
     })
+    for (const material in materials) {
+        materials[material].metalness = -2
+        materials[material].roughness = 1
+    }
 
     return <>
 
     <group ref={ref}>
             <Controller
-                animated={false}
+                animated={true}
                 maxVelLimit={props.speed}
                 jumpVel={props.jump}
                 camInitDir={{x: 0.4, y: 0}}
-                density={1}
                 mass={props.mass}
-                followLight={true}
                 friction={props.friction}
                 mode={"FixedCamera"}
                 camInitDis={-20}
-                floatHeight={1}
+                floatHeight={2}
+                capsuleRadius={0.3}
+                capsuleHalfHeight={0.35}
+
+
 
             >
-                <EcctrlAnimation characterURL={props.url} animationSet={animationSet}>
-                            <primitive object={nodes.body} />
+                <EcctrlAnimation  characterURL={props.url} animationSet={animationSet}>
+                    <group>
+                        <group scale={3}>
+                            <primitive object={nodes.Scene} />
+                        </group>
+                        <group>
+                            <skinnedMesh
+                                scale={100}
+                                name="body"
+                                skeleton={nodes.body.skeleton}
+                                geometry={nodes.body.geometry}
+                                material={materials["Material_0"]}
+                                receiveShadow
+                                castShadow
+                            />
+                        </group>
+                    </group>
+
                 </EcctrlAnimation>
 
             </Controller>
