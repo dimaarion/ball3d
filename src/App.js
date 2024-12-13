@@ -91,7 +91,7 @@ export default function App() {
 
                     <hemisphereLight intensity={0.2} />
 
-                    <directionalLight   position={[-10, 50, 0]} intensity={2} />
+                    <directionalLight   position={[-10, 300, 0]} intensity={2} />
 
                         <Sky />
 
@@ -100,7 +100,7 @@ export default function App() {
                     }
                     <KeyboardControls map={keyboardMap}>
 
-                        <Physics debug={false} gravity={[0, -5, 0]} paused={pause}>
+                        <Physics debug={true} gravity={[0, -10, 0]} paused={pause}>
                             {level.filter((el) => el.level === 1).map((el) => <Platform key={el.level + "platform"}
                                                                                         url={el.model}
                                                                                         position={el.position}
