@@ -1,43 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbe39a49-8cb3-4bfc-b3f7-a3975687adba" name="Default Changelist" comment="dimaarion/ball3d">
+    <list default="true" id="cbe39a49-8cb3-4bfc-b3f7-a3975687adba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/ball_1.blend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/ball_1.blend1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/level_1.blend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/level_1.blend1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/player.blend" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/player.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/player.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/player.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/player.glb" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/player.glb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/1888px-360°_Schadonapaß22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/AlbedoBase_XL_Create_a_seamless_texture_suitable_for_cylindric_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/AlbedoBase_XL_Design_a_seamless_highquality_texture_for_the_ba_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/AlbedoBase_XL_Fantasy_Style_Base_Magical_material_like_glow_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/AlbedoBase_XL_seamless_texture_of_the_building_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/a8ad3be6d14e85ab0c7ebc2d59614e92.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/bd00fefe82dcee18d1aadb478f8ebad5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/black-fabric-closeup.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/box.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/city.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/city.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/facade-2663296_1280.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/ghost_w_tophat-transformed.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/maxresdefault.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/metal-structure-with-rusty-surface.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/plane.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/plane.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/plane2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/plane2.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/plane3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/plane4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/plane5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/plane6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/sityPan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/texture/witcher.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/garage.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/garage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/balls/Player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/balls/Player.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +14,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="ProjectId" id="2pn2GA6T5nIChwRcBNnXqtFIeZT" />
   <component name="ProjectViewState">
@@ -98,15 +62,14 @@
       <workItem from="1733387425757" duration="2490000" />
       <workItem from="1733408025968" duration="6977000" />
       <workItem from="1733432789219" duration="4263000" />
-      <workItem from="1733730509718" duration="20370000" />
-      <workItem from="1733756873972" duration="3632000" />
-      <workItem from="1733777721164" duration="7231000" />
-      <workItem from="1733914308424" duration="37000" />
-      <workItem from="1733953710442" duration="2544000" />
-      <workItem from="1733961174439" duration="749000" />
-      <workItem from="1733984416610" duration="181000" />
-      <workItem from="1734015477015" duration="3545000" />
-      <workItem from="1734039708679" duration="2821000" />
+      <workItem from="1733469150947" duration="76000" />
+      <workItem from="1733472755275" duration="376000" />
+      <workItem from="1733493094344" duration="16000" />
+      <workItem from="1733499372949" duration="4771000" />
+      <workItem from="1733847271188" duration="2127000" />
+      <workItem from="1733853649631" duration="7501000" />
+      <workItem from="1733869682668" duration="322000" />
+      <workItem from="1733870158172" duration="2967000" />
     </task>
     <task id="LOCAL-00001" summary="dimaarion/ball3d">
       <created>1733389343955</created>
@@ -123,11 +86,11 @@
       <updated>1733389473817</updated>
     </task>
     <task id="LOCAL-00003" summary="dimaarion/ball3d">
-      <created>1733785482836</created>
+      <created>1733873075553</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1733785482836</updated>
+      <updated>1733873075553</updated>
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
