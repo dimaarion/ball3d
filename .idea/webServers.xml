@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="028923fd-d57f-4acf-bfff-c4db109e0723" name="bag">
+        <fileTransfer rootFolder="/home/users/d/dimaarion/domains/test.sandani.ru" accessType="SFTP" host="test.sandani.ru" port="22" sshConfigId="a1deaf81-6f43-4ad3-8c63-9198cf038a26" sshConfig="dimaarion@test.sandani.ru:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

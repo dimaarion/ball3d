@@ -82,7 +82,7 @@ export default function Player(props) {
                 camInitDir={{x: 0.4, y: 0}}
                 mass={props.mass}
                 friction={props.friction}
-                mode={"FixedCamera"}
+
                 camInitDis={-20}
                 floatHeight={2}
                 capsuleRadius={0.3}
