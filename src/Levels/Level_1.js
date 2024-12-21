@@ -57,7 +57,7 @@ export default function Level_1(props) {
 
 
     return <>
-        <group position={props.position} scale={3}>
+        <group position={props.position} scale={1}>
             <RigidBody ref={ref} colliders="trimesh" type="fixed">
                 <group>
 
@@ -70,7 +70,7 @@ export default function Level_1(props) {
                 </group>
             </RigidBody>
             <RigidBody colliders="trimesh" type="fixed">
-                <Gltf src={'https://test.sandani.ru/model.php'} scale={0.2}/>
+                <Gltf src={'https://test.sandani.ru/model.php'} />
             </RigidBody>
         </group>
 

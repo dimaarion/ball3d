@@ -7,10 +7,11 @@ import {Vector3} from "three";
 
 export default function Player(props) {
     const {nodes, materials, animations} = useGLTF(props.url);
+    const scene = useGLTF(props.url);
     const {ref, actions, names} = useAnimations(animations)
     const [, get] = useKeyboardControls()
     const [index, setIndex] = useState(false);
-    const [velocity, setVelocity] = useState(false);
+    const [velocity, setVelocity] = useState("Walk");
     const [speed, setSpeed] = useState(0);
 
     const body = useRef();
@@ -24,25 +25,25 @@ export default function Player(props) {
 
 
     const animationSet = {
-        idle: 'Run',
-        walk: 'Run',
+        idle: 'Idle',
+        walk: 'Walk',
         run: 'Run',
-        jump: 'Run',
-        jumpIdle: 'Run',
-        jumpLand: 'Run',
-        fall: 'Run', // This is for falling from high sky
-        action1: 'Run',
-        action2: 'Run',
-        action3: 'Run',
-        action4: 'Run'
+        jump: 'Jump_Start',
+        jumpIdle: 'Jump_Idle',
+        jumpLand: 'Jump_Land',
+        fall: 'Climbing', // This is for falling from high sky
+        action1: 'Wave',
+        action2: 'Wave',
+        action3: 'Wave',
+        action4: 'Attack'
     };
 
     useEffect(() => {
 
 
     }, []);
+    console.log(nodes)
 
-    console.log(names)
     useEffect(() => {
 
 
@@ -54,10 +55,10 @@ export default function Player(props) {
         const {forward, backward, left, right, jump} = get()
         if (body.current) {
             let v = body.current?.linvel();
-            if(Math.abs(v.x) > 1 || Math.abs(v.z) > 1){
-                setVelocity(true)
+            if(Math.abs(v.x) > 0 || Math.abs(v.z) > 0){
+                setVelocity("Walk")
             }else {
-                setVelocity(false)
+                setVelocity("Run")
             }
 
           // console.log(body.current?.linvel())
@@ -70,51 +71,72 @@ export default function Player(props) {
         materials[material].roughness = 1
     }
 
-    return <>
+    let test = true;
 
-        <group ref={ref}>
-            <Controller
-                ref={body}
-                animated={true}
-             ///   position={props.position}
-                maxVelLimit={props.speed}
-                jumpVel={props.jump}
-                camInitDir={{x: 0.4, y: 0}}
-                mass={props.mass}
-                friction={props.friction}
+    if(test){
+        return <>
 
-                camInitDis={-20}
-                floatHeight={2}
-                capsuleRadius={0.3}
-                capsuleHalfHeight={0.35}
-            >
-                <EcctrlAnimation  characterURL={props.url} animationSet={animationSet}>
-                <group>
-                    <group scale={0.5} position={[0,-2,0]}>
-                        <primitive object={nodes.Scene}/>
-                    </group>
-                    <group>
-                        {
-
-                            <skinnedMesh
-                            scale={100}
-                            name="body"
-                            skeleton={nodes.Body.skeleton}
-                            geometry={nodes.Body.geometry}
-                            material={materials["Material.001"]}
-                            receiveShadow
-                            castShadow
-                        />
-                        }
-
-                    </group>
-                </group>
-                </EcctrlAnimation>
-            </Controller>
-
-        </group>
+            <group ref={ref}>
+                <Controller
+                    ref={body}
+                    animated={true}
+                   // position={props.position}
+                    maxVelLimit={props.speed}
+                    jumpVel={props.jump}
+                    camInitDir={{x: -3, y: 0}}
+                    mass={props.mass}
+                    friction={props.friction}
+                    mode={"FixedCamera"}
+                    camInitDis={10}
+                    floatHeight={1.2}
+                    capsuleRadius={0.3}
+                    capsuleHalfHeight={0.35}
+                >
+                    <EcctrlAnimation  characterURL={props.url} animationSet={animationSet}>
+                        <group>
+                            <group scale={0.2} position={[0,-1.8,0]}>
+                                <primitive object={nodes.Body}/>
+                            </group>
+                        </group>
+                    </EcctrlAnimation>
+                </Controller>
+            </group>
 
 
-    </>
+        </>
+    }else {
+        return <>
+
+            <group ref={ref}>
+                <Controller
+                    ref={body}
+                    animated={true}
+                    ///   position={props.position}
+                    maxVelLimit={props.speed}
+                    jumpVel={props.jump}
+                    camInitDir={{x: -3, y: 0}}
+                    mass={props.mass}
+                    friction={props.friction}
+                    mode={"FixedCamera"}
+                    camInitDis={10}
+                    floatHeight={1.2}
+                    capsuleRadius={0.3}
+                    capsuleHalfHeight={0.35}
+                >
+
+                        <group>
+                            <group scale={0.2} position={[0,-2,0]}>
+                                <Gltf src={props.url}/>
+                            </group>
+                        </group>
+
+                </Controller>
+
+            </group>
+
+
+        </>
+    }
+
 
 }

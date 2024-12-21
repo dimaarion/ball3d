@@ -89,9 +89,9 @@ export default function App() {
             <StartGame>
                 <Canvas shadows camera={{fov: 45}}>
 
-                    <hemisphereLight intensity={0.2} />
+                    <hemisphereLight  intensity={0.8} />
 
-                    <directionalLight   position={[-10, 300, 0]} intensity={2} />
+                    <directionalLight position={[-100, 300, 0]} intensity={2} />
 
                         <Sky />
 
@@ -100,7 +100,7 @@ export default function App() {
                     }
                     <KeyboardControls map={keyboardMap}>
 
-                        <Physics debug={true} gravity={[0, -10, 0]} paused={pause}>
+                        <Physics debug={false} gravity={[0, -10, 0]} paused={pause}>
                             {level.filter((el) => el.level === 1).map((el) => <Platform key={el.level + "platform"}
                                                                                         url={el.model}
                                                                                         position={el.position}
@@ -136,5 +136,8 @@ export default function App() {
 useGLTF.preload([
     './asset/model/level_1.glb',
     'public/asset/model/ball_1.glb',
-    'public/asset/model/player.glb'
+    'public/asset/model/player.glb',
+    'https://test.sandani.ru/model.php',
+    'https://test.sandani.ru/bag.php',
+    './asset/model/bag.glb'
 ]);
