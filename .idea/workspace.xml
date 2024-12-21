@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbe39a49-8cb3-4bfc-b3f7-a3975687adba" name="Default Changelist" comment="dimaarion/ball3d">
-      <change afterPath="$PROJECT_DIR$/bag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/bag.blend" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/bag.blend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/Level_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/garage.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/garage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/balls/Player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/balls/Player.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +88,7 @@
       <workItem from="1734627666547" duration="3859000" />
       <workItem from="1734683023074" duration="15000" />
       <workItem from="1734790673998" duration="2908000" />
-      <workItem from="1734819627618" duration="4059000" />
+      <workItem from="1734819627618" duration="4736000" />
     </task>
     <task id="LOCAL-00001" summary="dimaarion/ball3d">
       <created>1733389343955</created>
@@ -121,7 +118,21 @@
       <option name="project" value="LOCAL" />
       <updated>1734478300723</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="dimaarion/ball3d">
+      <created>1734823933030</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734823933030</updated>
+    </task>
+    <task id="LOCAL-00006" summary="dimaarion/ball3d">
+      <created>1734823971735</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734823971735</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

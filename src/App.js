@@ -44,7 +44,12 @@ export default function App() {
         {name: "leftward", keys: ["ArrowLeft", "a", "A"]},
         {name: "rightward", keys: ["ArrowRight", "d", "D"]},
         {name: "jump", keys: ["Space"]},
-        {name: "action4", keys: ["KeyF"]},
+        {name: "run", keys: ["Shift"] },
+        // Optional animation key map
+        { name: "action1", keys: ["1"] },
+        { name: "action2", keys: ["2"] },
+        { name: "action3", keys: ["3"] },
+        { name: "action4", keys: ["KeyF"] },
     ];
 
     const keyboardMap2 = [
