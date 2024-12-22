@@ -2,7 +2,7 @@
   {
     "level": 1,
     "name": "",
-    "model": "./asset/model/level1.glb",
+    "model": "./asset/model/city.glb",
     "animations": ["coinAction.004"],
     "position": [0,0,0],
     "scale": 0.3

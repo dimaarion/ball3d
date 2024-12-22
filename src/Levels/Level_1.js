@@ -8,7 +8,7 @@ import Plane from "../components/Plane";
 
 export default function Level_1(props) {
 
-    const {nodes, materials, animations} = useGLTF('https://test.sandani.ru/model.php');
+    const {nodes,materials} = useGLTF('./asset/model/city.glb');
 
     //  const object = useGLTF("./asset/model/level1.glb");
     //  const { ref,actions} = useAnimations(animations)
@@ -19,15 +19,13 @@ export default function Level_1(props) {
 
 
     useEffect(() => {
-        if (props.actionsArray) {
-            setActionsArray(props.actionsArray)
-        }
+
 
     }, [])
 
     useEffect(() => {
 
-        console.log(nodes)
+console.log(nodes)
     }, [])
 
     const generateCityData = (rows, cols, spacing) => {
@@ -57,20 +55,29 @@ export default function Level_1(props) {
 
 
     return <>
-        <group position={props.position} scale={1}>
+        <group position={props.position} scale={2}>
             <RigidBody ref={ref} colliders="trimesh" type="fixed">
                 <group>
 
                     {  //  <mesh geometry={nodes.block_2.geometry} material={materials['Материал']} />
 
-                        // <primitive object={nodes.platform}/>
+                        //
                         //<primitive object={nodes.block}/>
                     }
-
+                    <mesh geometry={nodes.plane.geometry} material={materials['plane']} />
+                    <mesh geometry={nodes.doroga.geometry} material={materials['asvalt']} />
+                    <mesh geometry={nodes.arka.geometry} material={materials['Material.005']} />
+                    <mesh geometry={nodes.bardur.geometry} material={materials['tratuar']} />
                 </group>
             </RigidBody>
             <RigidBody colliders="trimesh" type="fixed">
-                <Gltf src={'https://test.sandani.ru/model.php'} />
+            <group>
+                <primitive object={nodes.building_1}/>
+                <primitive object={nodes.building_2}/>
+                <primitive object={nodes.building_3}/>
+                <primitive object={nodes.building_4}/>
+                <primitive object={nodes.building_5}/>
+            </group>
             </RigidBody>
         </group>
 

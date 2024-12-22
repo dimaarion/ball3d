@@ -6,18 +6,13 @@ import {useEffect} from "react";
 import * as THREE from "three";
 
 export default function Plane(props) {
-    const texture = useLoader(TextureLoader, './asset/texture/plane4.jpg');
-    useEffect(() => {
-        // Set texture repetition to tile the texture across the surface
-        texture?.repeat.set(10, 10); // Adjust these values to control how many times it repeats in each direction
-        texture.wrapS = THREE.RepeatWrapping; // Wrap texture horizontally
-        texture.wrapT = THREE.RepeatWrapping; // Wrap texture vertically
-    }, [texture]);
+
+
     return (
         <group {...props}>
                 <mesh  receiveShadow rotation-x={-Math.PI / 2}  >
-                    <planeGeometry args={[5000, 5000]} />
-                    <meshStandardMaterial map={texture} />
+                    <planeGeometry args={[5000, 5000]}  />
+                    <meshStandardMaterial color={"green"} />
                 </mesh>
         </group>
 

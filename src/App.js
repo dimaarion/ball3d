@@ -142,7 +142,6 @@ useGLTF.preload([
     './asset/model/level_1.glb',
     'public/asset/model/ball_1.glb',
     'public/asset/model/player.glb',
-    'https://test.sandani.ru/model.php',
-    'https://test.sandani.ru/bag.php',
-    './asset/model/bag.glb'
+    './asset/model/bag.glb',
+    'public/asset/model/city.glb'
 ]);

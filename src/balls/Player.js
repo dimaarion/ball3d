@@ -3,6 +3,7 @@ import {Gltf, useAnimations, useGLTF, useKeyboardControls} from "@react-three/dr
 import {useEffect, useRef, useState} from "react";
 import {useFrame} from "@react-three/fiber";
 import {Vector3} from "three";
+import {routable} from "../actions";
 
 
 export default function Player(props) {
@@ -40,9 +41,9 @@ export default function Player(props) {
 
     useEffect(() => {
 
-
+        console.log(nodes)
     }, []);
-    console.log(nodes)
+
 
     useEffect(() => {
 
@@ -52,91 +53,47 @@ export default function Player(props) {
 
 
     useFrame((state, delta) => {
-        const {forward, backward, left, right, jump} = get()
-        if (body.current) {
-            let v = body.current?.linvel();
-            if(Math.abs(v.x) > 0 || Math.abs(v.z) > 0){
-                setVelocity("Walk")
-            }else {
-                setVelocity("Run")
-            }
-
-          // console.log(body.current?.linvel())
-        }
 
 
     })
+
     for (const material in materials) {
         materials[material].metalness = -2
         materials[material].roughness = 1
     }
 
-    let test = true;
 
-    if(test){
         return <>
 
-            <group ref={ref}>
+            <group ref={ref} >
                 <Controller
                     ref={body}
                     animated={true}
                    // position={props.position}
                     maxVelLimit={props.speed}
                     jumpVel={props.jump}
-                    camInitDir={{x: -3, y: 0}}
+                    camInitDir={{ x: routable(10), y: 0 }}
+                    camTargetPos = {{x: 0, y: 0.2, z: 0}}
                     mass={props.mass}
                     friction={props.friction}
                     mode={"FixedCamera"}
-                    camInitDis={10}
+                    camInitDis={-15}
                     floatHeight={1.2}
                     capsuleRadius={0.3}
                     capsuleHalfHeight={0.35}
+
                 >
                     <EcctrlAnimation  characterURL={props.url} animationSet={animationSet}>
                         <group>
-                            <group scale={0.2} position={[0,-1.8,0]}>
-                                <primitive object={nodes.Body}/>
-                            </group>
+                            <primitive scale={0.3} position={[0,-1.5,0]}  object={nodes.Body}/>
                         </group>
+
                     </EcctrlAnimation>
                 </Controller>
             </group>
 
 
         </>
-    }else {
-        return <>
-
-            <group ref={ref}>
-                <Controller
-                    ref={body}
-                    animated={true}
-                    ///   position={props.position}
-                    maxVelLimit={props.speed}
-                    jumpVel={props.jump}
-                    camInitDir={{x: -3, y: 0}}
-                    mass={props.mass}
-                    friction={props.friction}
-                    mode={"FixedCamera"}
-                    camInitDis={10}
-                    floatHeight={1.2}
-                    capsuleRadius={0.3}
-                    capsuleHalfHeight={0.35}
-                >
-
-                        <group>
-                            <group scale={0.2} position={[0,-2,0]}>
-                                <Gltf src={props.url}/>
-                            </group>
-                        </group>
-
-                </Controller>
-
-            </group>
-
-
-        </>
-    }
 
 
 }

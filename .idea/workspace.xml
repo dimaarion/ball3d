@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbe39a49-8cb3-4bfc-b3f7-a3975687adba" name="Default Changelist" comment="dimaarion/ball3d">
+    <list default="true" id="cbe39a49-8cb3-4bfc-b3f7-a3975687adba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/asset/model/city.glb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/model/walk_cycles_idle_walk_and_run..glb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/texture/340310f598df4322b57c0bfe58d7f009.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2024_22_26_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2024_22_26__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/asset/model/bag.blend" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/bag.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/bag.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/bag.blend1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/bag.glb" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/bag.glb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/city.blend" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/city.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/city.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/city.blend1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Levels/Level_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level_1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/level.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/level.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/balls/Player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/balls/Player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Plane.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Plane.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +102,11 @@
       <workItem from="1734683023074" duration="15000" />
       <workItem from="1734790673998" duration="2908000" />
       <workItem from="1734819627618" duration="4736000" />
+      <workItem from="1734877240460" duration="227000" />
+      <workItem from="1734892095028" duration="282000" />
+      <workItem from="1734906318135" duration="809000" />
+      <workItem from="1734910907695" duration="122000" />
+      <workItem from="1734911510579" duration="350000" />
     </task>
     <task id="LOCAL-00001" summary="dimaarion/ball3d">
       <created>1733389343955</created>
