@@ -1,19 +1,15 @@
 import { useFrame } from "@react-three/fiber";
 import {useEffect, useRef, useState} from "react";
 import {CylinderCollider, RigidBody, useRevoluteJoint} from "@react-three/rapier";
-import {useGLTF, useKeyboardControls} from "@react-three/drei";
+import {Box, useGLTF, useKeyboardControls} from "@react-three/drei";
 import * as THREE from "three";
 import {MathUtils} from "three";
 import {routable} from "../actions";
 
 export default function Car2(props) {
     const body = useRef(); // Ссылка на физическое тело машины
-    const rear_right_wheel = useRef();
-    const rear_left_wheel = useRef();
-    const front_right_wheel = useRef();
-    const front_left_wheel = useRef();
-    const right_wheel = useRef();
-    const left_wheel = useRef();
+
+
     const [speed, setSpeed] = useState(0); // Текущая скорость машины
     const [steeringAngle, setSteeringAngle] = useState(0); // Угол поворота руля
     const [carDirection, setCarDirection] = useState(0); // Текущее направление машины
@@ -26,28 +22,12 @@ export default function Car2(props) {
 
     const [, get] = useKeyboardControls(); // Подключение клавиатурных контролов
 
-const jointRear_right_wheelBody = useRevoluteJoint(body,rear_right_wheel,[
-    [0,-1.6,3.1],
-    [0,0,0],
-    [1,0,0]
-])
-    const jointRear_left_wheelBody = useRevoluteJoint(body,rear_left_wheel,[
-        [0,-1.6,3.1],
-        [0,0,0],
-        [1,0,0]
-    ])
 
-    const jointFront_right_wheelBody = useRevoluteJoint(body,front_right_wheel,[
-        [0,-1.7,-4.1],
-        [0,0,0],
-        [1,0,0]
-    ])
-    const jointFront_left_wheelBody = useRevoluteJoint(body,front_left_wheel,[
-        [0,-1.7,-4.1],
-        [0,0,0],
-        [1,0,0]
-    ])
     const cameraOffset = new THREE.Vector3(0, 5, 20); // Камера выше и позади машины
+
+
+
+
     useFrame((state, delta) => {
         if (!body.current) return;
 
@@ -98,27 +78,52 @@ const jointRear_right_wheelBody = useRevoluteJoint(body,rear_right_wheel,[
         ).normalize();
 
         // Применение скорости и направления к физическому телу
-/*
-        body.current?.setLinvel({
-            x: direction.x * speed,
-           y: velocity.y,
-           z: direction.z * speed,
-    });*/
-if(forward || backward){
+
+
+/*if(forward || backward){
     body.current?.setAngvel({
         x:body.current?.angvel().x,
         y:-steeringAngle * 2,
         z:body.current?.angvel().z
     })
 }
+    */
+
+        const carRef = body.current;
+
+
+        const forwardVector = new THREE.Vector3(0, 0, -1).applyQuaternion(
+            carRef?.rotation()
+        );
+        const rightVector = new THREE.Vector3(1, 0, 0).applyQuaternion(
+            carRef?.rotation()
+        );
+
+        let impulse = new THREE.Vector3();
+
+        if (forward) {
+            impulse.add(forwardVector.multiplyScalar(-speed));
+        }
+
+        if (backward) {
+            impulse.add(forwardVector.multiplyScalar(speed));
+        }
+
+        if (leftward) {
+            carRef?.applyTorqueImpulse({ x: 0, y: turnSpeed, z: 0 });
+        }
+
+        if (rightward) {
+            carRef?.applyTorqueImpulse({ x: 0, y: -turnSpeed, z: 0 });
+        }
+
+        carRef?.applyImpulse(impulse, true);
+
 
 
 
 //console.log(carRotation.y > 0.3 || carRotation.y < -0.3)
-        jointRear_right_wheelBody.current.configureMotorVelocity(speed,30)
-        jointRear_left_wheelBody.current.configureMotorVelocity(speed,30)
-        jointFront_right_wheelBody.current.configureMotorVelocity(speed,30)
-        jointFront_left_wheelBody.current.configureMotorVelocity(speed,30)
+
 
         // Управление камерой
 
@@ -145,13 +150,9 @@ if(forward || backward){
     });
 
     useEffect(()=>{
-        Object.values(materials).forEach((material) => {
-            material.transparent = false; // Убираем прозрачность
-            material.opacity = 1;        // Полностью непрозрачный
-            material.needsUpdate = true; // Принудительное обновление
-        });
 
-        console.log(left_wheel)
+
+
     },[])
 
 
@@ -170,38 +171,14 @@ if(forward || backward){
                 {...props}
                 args={[0.5,0.5,0.5]}
             >
-                {/* Визуальное представление машины */}
-                <group>
-                    <mesh geometry={nodes.Body.geometry} material={materials['Материал']}  castShadow receiveShadow />
-                    <mesh geometry={nodes.engine.geometry}  material={materials['engine.001']} position={[0,-0.2,-1]}   castShadow receiveShadow />
-                    <mesh geometry={nodes.engine_part.geometry} material={materials['engine.001']} position={[-0.17,-0.15,-1.35]}   castShadow receiveShadow />
-                    <mesh geometry={nodes.engine_part001.geometry} material={materials['engine.001']} position={[0,-0.1,-1.35]}   castShadow receiveShadow />
-                    <mesh geometry={nodes.engine_part002.geometry} material={materials['engine.001']} position={[0,-0.3,-1.44]}   castShadow receiveShadow />
-                    <mesh geometry={nodes.ftulka_1.geometry} material={materials['Материал']} position={[0,-0.55,-1.4]}   castShadow receiveShadow />
-                    <mesh geometry={nodes.ftulka_2.geometry} material={materials['Материал']} position={[0,-0.55,1.04]}   castShadow receiveShadow />
-                </group>
 
+
+                <Box args={[2, 1, 4]}>
+                    <meshStandardMaterial color="red" />
+                </Box>
 
             </RigidBody>
-            <RigidBody  type={"dynamic"} colliders={"hull"} friction={props.friction} ref={rear_right_wheel}>
-                    <mesh geometry={nodes.rear_right_wheel.geometry} material={materials['Материал.001']}    castShadow receiveShadow />
-
-            </RigidBody>
-            <RigidBody type={"dynamic"} colliders={"hull"} friction={props.friction} ref={rear_left_wheel}>
-                <mesh geometry={nodes.rear_left_wheel.geometry} material={materials['Материал.001']}    castShadow receiveShadow />
-
-            </RigidBody>
-            <RigidBody type={"dynamic"} colliders={"hull"} friction={props.friction} ref={front_right_wheel}>
-                <mesh rotation={[0,routable(0),0]} position={[0.8,0,0]} geometry={nodes.front_right_wheel.geometry} material={materials['Материал.001']}    castShadow receiveShadow />
-
-            </RigidBody>
-            <RigidBody type={"dynamic"} colliders={"hull"}  friction={props.friction} ref={front_left_wheel}>
-                <mesh geometry={nodes.front_left_wheel.geometry} ref={left_wheel} position={[-0.8, 0, 0]}
-                      material={materials['Материал.001']} castShadow receiveShadow/>
-
-            </RigidBody>
-
-             </group>
+        </group>
         </>
     );
 }

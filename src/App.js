@@ -23,6 +23,8 @@ import level from "./assets/level.json"
 import {Physics} from '@react-three/rapier'
 import Player from "./balls/Player";
 import CityBackground from "./components/CityBackground";
+import Gear from "./balls/Gear";
+import Car2 from "./components/Car2";
 
 
 export default function App() {
@@ -96,21 +98,23 @@ export default function App() {
 
                     <hemisphereLight  intensity={0.8} />
 
-                    <directionalLight position={[-100, 300, 0]} intensity={2} />
+                    <directionalLight position={[10, 30, 5]} intensity={2} />
 
                         <Sky />
 
                     {
                        // <Environment  ground={{scale:500,radius:5000,height:1000}} files={'./asset/texture/plane6.jpg'} />
                     }
-                    <KeyboardControls map={keyboardMap}>
 
-                        <Physics debug={false} gravity={[0, -10, 0]} paused={pause}>
+
+                        <Physics debug={true} gravity={[0, -30, 0]} paused={pause}>
+                            <KeyboardControls map={keyboardMap}>
                             {level.filter((el) => el.level === 1).map((el) => <Platform key={el.level + "platform"}
                                                                                         url={el.model}
                                                                                         position={el.position}
                                                                                         actionsArray={el.animations}/>)}
-                            {garage.filter((el) => el.id === 1 && !restart).map((el) => <Player url={el.model}
+
+                            {garage.filter((el) => el.id === 1 && !restart).map((el) => <Gear url={el.model}
                                                                                                  position={el.position}
                                                                                                  key={el.id}
                                                                                                  friction={el.friction}
@@ -119,7 +123,7 @@ export default function App() {
                                                                                                  control={el.control}
                                                                                                  speed={el.speed}/>)}
 
-
+                    </KeyboardControls>
                         </Physics>
 
                         <PositionalAudio
@@ -130,7 +134,7 @@ export default function App() {
                             url="./asset/sound/y2mate.com - Dmitriy Lukyanov_Underwater.mp3"
                             distance={music}
                         />
-                    </KeyboardControls>
+
 
                 </Canvas>
             </StartGame>
@@ -143,5 +147,8 @@ useGLTF.preload([
     'public/asset/model/ball_1.glb',
     'public/asset/model/player.glb',
     './asset/model/bag.glb',
-    'public/asset/model/city.glb'
+    'public/asset/model/city.glb',
+    './asset/model/hest.glb',
+    "./asset/model/player_hest.glb",
+    './asset/model/wheel-tree.glb'
 ]);

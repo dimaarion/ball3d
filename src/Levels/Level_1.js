@@ -8,14 +8,13 @@ import Plane from "../components/Plane";
 
 export default function Level_1(props) {
 
-    const {nodes,materials} = useGLTF('./asset/model/city.glb');
+    const {nodes, materials} = useGLTF('./asset/model/hest.glb');
 
     //  const object = useGLTF("./asset/model/level1.glb");
     //  const { ref,actions} = useAnimations(animations)
     const [actionsArray, setActionsArray] = useState([])
     const pause = useSelector((state) => state.pause.value);
     const ref = useRef();
-
 
 
     useEffect(() => {
@@ -25,7 +24,7 @@ export default function Level_1(props) {
 
     useEffect(() => {
 
-console.log(nodes)
+        console.log(nodes)
     }, [])
 
     const generateCityData = (rows, cols, spacing) => {
@@ -51,37 +50,51 @@ console.log(nodes)
 //console.log(cityData)
 
 
-    // Добавляем вращение HDRI окружения
+    const test = false;
+    if (test) {
+        return <>
+            <group position={props.position} scale={2}>
+                <RigidBody ref={ref} colliders="trimesh" type="fixed">
+                    <group>
 
+                        {  //  <mesh geometry={nodes.block_2.geometry} material={materials['Материал']} />
 
-    return <>
-        <group position={props.position} scale={2}>
-            <RigidBody ref={ref} colliders="trimesh" type="fixed">
-                <group>
-
-                    {  //  <mesh geometry={nodes.block_2.geometry} material={materials['Материал']} />
-
-                        //
-                        //<primitive object={nodes.block}/>
-                    }
-                    <mesh geometry={nodes.plane.geometry} material={materials['plane']} />
-                    <mesh geometry={nodes.doroga.geometry} material={materials['asvalt']} />
-                    <mesh geometry={nodes.arka.geometry} material={materials['Material.005']} />
-                    <mesh geometry={nodes.bardur.geometry} material={materials['tratuar']} />
-                </group>
-            </RigidBody>
-            <RigidBody colliders="trimesh" type="fixed">
-            <group>
-                <primitive object={nodes.building_1}/>
-                <primitive object={nodes.building_2}/>
-                <primitive object={nodes.building_3}/>
-                <primitive object={nodes.building_4}/>
-                <primitive object={nodes.building_5}/>
+                            //
+                            //<primitive object={nodes.block}/>
+                        }
+                        <mesh geometry={nodes.plane.geometry} material={materials['plane']}/>
+                        <mesh geometry={nodes.doroga.geometry} material={materials['asvalt']}/>
+                        <mesh geometry={nodes.arka.geometry} material={materials['Material.005']}/>
+                        <mesh geometry={nodes.bardur.geometry} material={materials['tratuar']}/>
+                    </group>
+                </RigidBody>
+                <RigidBody colliders="trimesh" type="fixed">
+                    <group>
+                        <primitive object={nodes.building_1}/>
+                        <primitive object={nodes.building_2}/>
+                        <primitive object={nodes.building_3}/>
+                        <primitive object={nodes.building_4}/>
+                        <primitive object={nodes.building_5}/>
+                        <primitive object={nodes.zabor_1}/>
+                    </group>
+                </RigidBody>
+                <primitive object={nodes.desirefx_me_1}/>
             </group>
-            </RigidBody>
-        </group>
 
-        {/*cityData.map((el)=><City position={[el.x,el.y,el.z]}/>)*/}
-        {/*<CityBackground file={'./asset/texture/maxresdefault.jpg'}/>*/}
-    </>
+            {/*cityData.map((el)=><City position={[el.x,el.y,el.z]}/>)*/}
+            {/*<CityBackground file={'./asset/texture/maxresdefault.jpg'}/>*/}
+        </>
+    } else {
+        return <>
+            <group position={props.position} scale={2}>
+                <RigidBody ref={ref} colliders="trimesh" type="fixed">
+                    <group>
+
+                        <primitive object={nodes.Scene}/>
+                    </group>
+                </RigidBody>
+            </group>
+
+        </>
+    }
 }

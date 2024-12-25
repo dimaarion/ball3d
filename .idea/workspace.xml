@@ -1,23 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbe39a49-8cb3-4bfc-b3f7-a3975687adba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/asset/model/city.glb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/model/walk_cycles_idle_walk_and_run..glb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/texture/340310f598df4322b57c0bfe58d7f009.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2024_22_26_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_12_2024_22_26__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="cbe39a49-8cb3-4bfc-b3f7-a3975687adba" name="Default Changelist" comment="dimaarion/ball3d">
+      <change afterPath="$PROJECT_DIR$/public/asset/img/AlbedoBase_XL_A_steampunkinspired_2D_sidescrolling_level_desig_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/model/assets/models/boitumelo-rigged_368945e2-2ef4-4a51-90a2-8694b2e51a8f/boitumelo-rigged_0_5K_8884add2-a032-447c-b784-252a255b4315.blend" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/model/hest.blend" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/model/hest.blend1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/model/hest.glb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/model/player_hest.blend" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/model/player_hest.glb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asset/model/wheel-tree.glb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/balls/Gear.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/bag.blend" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/bag.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/bag.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/bag.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/bag.glb" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/bag.glb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/city.blend" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/city.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/city.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/city.blend1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/064b4b1b-bf61-462d-b083-5888eb6ddfcc.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/12020_autosave.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/12020_autosave.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/18020_autosave.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/18020_autosave.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/9f10d7d4-e412-45b2-b205-d3005c640ca12.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/ladybug.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/ladybug.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_CasualEyes_00_00_alb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_CasualEyes_00_00_nor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_CasualEyes_00_00_rmo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_CasualEyes_00_00_rmo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_CasualHair_00_00_alb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_CasualHair_00_00_ao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugClothDetail_00_00_msk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugCloth_00_00_alb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugCloth_00_01_alb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugCloth_00_01_rmo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugCloth_00_01_rmo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugCloth_00_02_alb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugCloth_00_02_rmo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugCloth_00_02_rmo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugCloth_00_03_alb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugCloth_00_03_rmo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugCloth_00_03_rmo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugHead_00_01_alb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugHead_00_01_rmo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugHead_00_01_rmo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/tex_chr_mar_LadybugHead_00_01_rmo3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/yoyo.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/PC Computer - Miraculous Rise of the Sphinx - Ladybug/ladybug/yoyo.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/bag.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/bag.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/bag.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/bag5.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/ball_1.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/c5633b8e-9991-4fc1-abb2-d91a9bf74ab9.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/city.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/city.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/city.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/ladybug-2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/ladybug.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/ladybug/source/Ladybug.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/ladybug/textures/gltf_embedded_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/ladybug/textures/gltf_embedded_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/ladybug/textures/gltf_embedded_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/ladybug/textures/gltf_embedded_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/player.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/asset/model/walk_cycles_idle_walk_and_run..glb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Levels/Level_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/level.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/level.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/garage.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/garage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/balls/Player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/balls/Player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Plane.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Plane.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Car2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Car2.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +95,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../car" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/asset/model" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -57,6 +107,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.1.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\React\ball3d\public\asset\model" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -107,6 +162,11 @@
       <workItem from="1734906318135" duration="809000" />
       <workItem from="1734910907695" duration="122000" />
       <workItem from="1734911510579" duration="350000" />
+      <workItem from="1734988226895" duration="595000" />
+      <workItem from="1734996728718" duration="848000" />
+      <workItem from="1735025201567" duration="5569000" />
+      <workItem from="1735041917608" duration="19215000" />
+      <workItem from="1735157188686" duration="2903000" />
     </task>
     <task id="LOCAL-00001" summary="dimaarion/ball3d">
       <created>1733389343955</created>
