@@ -67,7 +67,7 @@ export default function Gear(props){
     })
 
     return <>
-<Controller mode={"FixedCamera"} camInitDir={{x:routable(20),y:routable(90)}}  friction={props.friction} disableControl={true} turnSpeed={1} camInitDis={-20}   colliders={"hull"}  ref={carRef}  type={"dynamic"} mass={props.mass} >
+<Controller  camInitDir={{x:routable(20),y:routable(90)}}  friction={props.friction} disableControl={true} turnSpeed={1} camInitDis={-20}   colliders={"hull"}  ref={carRef}  type={"dynamic"} mass={props.mass} >
 
     <Gltf src={'./asset/model/wheel-tree.glb'} scale={0.5} rotation={[0,Math.PI / 2,0]}/>
 

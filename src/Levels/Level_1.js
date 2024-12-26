@@ -89,10 +89,21 @@ export default function Level_1(props) {
             <group position={props.position} scale={2}>
                 <RigidBody ref={ref} colliders="trimesh" type="fixed">
                     <group>
-
-                        <primitive object={nodes.Scene}/>
+                        <primitive object={nodes.platform}/>
                     </group>
                 </RigidBody>
+                <RigidBody>
+                    <group>
+                        <mesh geometry={nodes.point.geometry} material={materials['tratuar']}/>
+                    </group>
+                </RigidBody>
+                <group>
+                    <primitive object={nodes.plane}/>
+                    <primitive object={nodes.fon}/>
+                    <primitive object={nodes.finih}/>
+                </group>
+
+
             </group>
 
         </>

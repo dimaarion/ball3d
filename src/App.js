@@ -107,7 +107,7 @@ export default function App() {
                     }
 
 
-                        <Physics debug={true} gravity={[0, -30, 0]} paused={pause}>
+                        <Physics debug={false} gravity={[0, -30, 0]} paused={pause}>
                             <KeyboardControls map={keyboardMap}>
                             {level.filter((el) => el.level === 1).map((el) => <Platform key={el.level + "platform"}
                                                                                         url={el.model}
