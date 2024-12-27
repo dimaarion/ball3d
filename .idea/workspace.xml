@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbe39a49-8cb3-4bfc-b3f7-a3975687adba" name="Default Changelist" comment="dimaarion/ball3d">
-      <change afterPath="$PROJECT_DIR$/public/asset/texture/AlbedoBase_XL_The_metal_texture_is_seamless_0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/texture/AlbedoBase_XL_The_metal_texture_is_seamless_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/texture/AlbedoBase_XL_The_metal_texture_is_seamless_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/texture/AlbedoBase_XL_seamless_metal_texture_6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/texture/AlbedoBase_XL_seamless_metal_texture_without_glare_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/texture/abstract-perforated-metallic-background-with-scratches-stains.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/texture/grunge-style-metallic-texture-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/texture/platform_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/asset/texture/platform_2.png" afterDir="false" />
+    <list default="true" id="cbe39a49-8cb3-4bfc-b3f7-a3975687adba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/asset/model/hest.blend" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/hest.blend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/asset/model/hest.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/hest.blend1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/asset/model/hest.glb" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/hest.glb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Levels/Level_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/balls/Gear.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/balls/Gear.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +98,8 @@
       <workItem from="1734911510579" duration="350000" />
       <workItem from="1735202423871" duration="689000" />
       <workItem from="1735224079470" duration="2484000" />
+      <workItem from="1735233265166" duration="174000" />
+      <workItem from="1735271317585" duration="1378000" />
     </task>
     <task id="LOCAL-00001" summary="dimaarion/ball3d">
       <created>1733389343955</created>
@@ -152,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1734823971735</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="dimaarion/ball3d">
+      <created>1735233285405</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735233285405</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

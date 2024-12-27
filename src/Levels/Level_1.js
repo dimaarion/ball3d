@@ -92,9 +92,9 @@ export default function Level_1(props) {
                         <primitive object={nodes.platform}/>
                     </group>
                 </RigidBody>
-                <RigidBody>
+                <RigidBody colliders={"cuboid"} type={"fixed"}>
                     <group>
-                        <mesh geometry={nodes.point.geometry} material={materials['tratuar']}/>
+                        <primitive object={nodes.point}/>
                     </group>
                 </RigidBody>
                 <group>
