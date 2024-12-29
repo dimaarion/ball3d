@@ -6,25 +6,25 @@ import {routable} from "../actions";
 import {BallCollider, RigidBody, useRevoluteJoint} from "@react-three/rapier";
 import * as THREE from "three";
 import Controller from "ecctrl";
-import {get,set} from "lockr"
+import {get, set} from "lockr"
+import {useSelector} from "react-redux";
 
 
-
-export default function Gear(props){
+export default function Gear(props) {
     const body = useRef()
     const wheel = useRef();
     const [, get] = useKeyboardControls();
     const carRef = useRef();
-    const {nodes, materials,animations} = useGLTF('./asset/model/wheel-tree.glb');
-
+    const {nodes, materials, animations} = useGLTF('./asset/model/wheel-tree.glb');
+    const restart = useSelector((state) => state.restart.value);
 //console.log(nodes)
     const speed = props.speed;
     const turnSpeed = props.control;
-    useFrame((state,delta)=>{
-        const { forward, backward, leftward, rightward } = get();
+    useFrame((state, delta) => {
+        const {forward, backward, leftward, rightward} = get();
         if (forward || backward || leftward || rightward) {
             carRef.current?.wakeUp();
-        }else {
+        } else {
             //  body.current?.sleep();
         }
 
@@ -61,25 +61,39 @@ export default function Gear(props){
             body?.setAngvel({
                 x: forwardVelocity * forwardVector.x,
                 y: angularVelocity,
-                z:forwardVelocity * forwardVector.z });
+                z: forwardVelocity * forwardVector.z
+            });
 
         }
 
 
     })
 
+
+    useEffect(()=>{
+        if (restart) {
+            carRef.current?.setTranslation({
+                x: props.position[0],
+                y: props.position[1],
+                z: props.position[2]
+            })
+        }
+        console.log(restart)
+    },[restart])
     return <>
-<Controller name={"player"}  camInitDir={{x:routable(20),y:routable(90)}}  friction={props.friction} disableControl={true} turnSpeed={1} camInitDis={-20}   colliders={"hull"}  ref={carRef}  type={"dynamic"} mass={props.mass} >
-<group scale={0.3} rotation={[routable(90),0,0]}>
-    <mesh geometry={nodes.wheel.geometry}  />
-</group>
+        <Controller position={props.position} name={"player"} camInitDir={{x: routable(20), y: routable(90)}}
+                    friction={props.friction} disableControl={true} turnSpeed={1} camInitDis={-20} colliders={"hull"}
+                    ref={carRef} type={"dynamic"} mass={props.mass}>
+            <group scale={0.3} rotation={[routable(90), 0, 0]}>
+                <mesh geometry={nodes.wheel.geometry}/>
+            </group>
 
 
-<BallCollider args={[5,5,5]} sensor={true} onIntersectionEnter={(e)=> {
+            <BallCollider args={[1, 1, 1]} sensor={true} onIntersectionEnter={(e) => {
 
 
-}} />
-</Controller>
+            }}/>
+        </Controller>
 
     </>
 }

@@ -16,7 +16,7 @@ import Pause from "./components/Pause";
 import StartGame from "./components/StartGame";
 import TopPanel from "./components/TopPanel";
 import Settings from "./components/Settings";
-import {useEffect, useRef} from "react";
+import {Suspense, useEffect, useRef} from "react";
 import Garage from "./components/Garage";
 import garage from "./assets/garage.json"
 import level from "./assets/level.json"
@@ -110,24 +110,26 @@ export default function App() {
                     }
 
 
-                    <Physics debug={true} gravity={[0, -30, 0]} paused={pause}>
+                    <Physics debug={true} gravity={[0, -30, 0]}  >
                         <KeyboardControls map={keyboardMap}>
-                            {get("lockr_levels").filter((el) => el.level === 1).map((el) => <Platform
-                                key={el.level + "platform"}
-                                url={el.model}
-                                position={el.position}
-                                actionsArray={el.animations}
-                                level={el.level}
-                            />)}
+                            {get("lockr_levels").filter((el) => el.level === 1).map((el) =><group key={el.level + "platform"}>
+                                <Platform
+                                    url={el.model}
+                                    position={el.position}
+                                    actionsArray={el.animations}
+                                    level={el.level}
+                                />
+                                {garage.filter((els) => els.id === 1).map((els) => <Gear url={els.model}
+                                                                                      position={el.playerPosition}
+                                                                                      key={els.id + "player"}
+                                                                                      friction={els.friction}
+                                                                                      mass={els.mass}
+                                                                                      jump={els.jump}
+                                                                                      control={els.control}
+                                                                                      speed={els.speed}/>)}
+                            </group>)}
 
-                            {garage.filter((el) => el.id === 1 && !restart).map((el) => <Gear url={el.model}
-                                                                                              position={el.position}
-                                                                                              key={el.id}
-                                                                                              friction={el.friction}
-                                                                                              mass={el.mass}
-                                                                                              jump={el.jump}
-                                                                                              control={el.control}
-                                                                                              speed={el.speed}/>)}
+
 
                         </KeyboardControls>
                     </Physics>

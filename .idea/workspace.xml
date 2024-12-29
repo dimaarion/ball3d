@@ -3,18 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cbe39a49-8cb3-4bfc-b3f7-a3975687adba" name="Default Changelist" comment="dimaarion/ball3d">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/hest.blend" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/hest.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/hest.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/hest.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/asset/model/hest.glb" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/model/hest.glb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Levels/Level_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Levels/Level_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/garage.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/garage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/level.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/level.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/balls/Gear.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/balls/Gear.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reduser/savePosition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser/savePosition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reduser/sound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser/sound.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +107,7 @@
       <workItem from="1735157188686" duration="2903000" />
       <workItem from="1735281198937" duration="9838000" />
       <workItem from="1735325034744" duration="15795000" />
-      <workItem from="1735504115668" duration="2110000" />
+      <workItem from="1735504115668" duration="6408000" />
     </task>
     <task id="LOCAL-00001" summary="dimaarion/ball3d">
       <created>1733389343955</created>
@@ -160,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1734823971735</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="dimaarion/ball3d">
+      <created>1735506270451</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735506270451</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
