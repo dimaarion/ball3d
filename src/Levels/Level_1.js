@@ -1,30 +1,27 @@
-import {RigidBody} from "@react-three/rapier";
-import {Gltf, useGLTF} from "@react-three/drei";
+import {BallCollider, CuboidCollider, RigidBody} from "@react-three/rapier";
+import {Gltf, useAnimations, useGLTF} from "@react-three/drei";
 import {useEffect, useLayoutEffect, useRef, useState} from "react";
 import {useSelector} from "react-redux";
-import Play from "../components/Play";
-import Plane from "../components/Plane";
+import {useFrame} from "@react-three/fiber";
+import {get,set} from "lockr";
 
 
 export default function Level_1(props) {
 
-    const {nodes, materials} = useGLTF('./asset/model/hest.glb');
-
-    //  const object = useGLTF("./asset/model/level1.glb");
-    //  const { ref,actions} = useAnimations(animations)
+    const {nodes, materials, animations} = useGLTF(props?.url);
+    const {ref, actions, names} = useAnimations(animations)
     const [actionsArray, setActionsArray] = useState([])
     const pause = useSelector((state) => state.pause.value);
-    const ref = useRef();
+    const [point, setPoint] = useState("blue");
 
-
+    const block = useRef();
     useEffect(() => {
 
 
     }, [])
 
     useEffect(() => {
-
-        console.log(nodes)
+        console.log(names)
     }, [])
 
     const generateCityData = (rows, cols, spacing) => {
@@ -47,65 +44,51 @@ export default function Level_1(props) {
 
 // Пример: 5 рядов и 5 колонн зданий с расстоянием 500 между ми
     const cityData = generateCityData(5, 1, 150);
-//console.log(cityData)
 
 
-    const test = false;
-    if (test) {
-        return <>
-            <group position={props.position} scale={2}>
-                <RigidBody ref={ref} colliders="trimesh" type="fixed">
-                    <group>
+    useFrame((state, delta, frame) => {
+        block.current?.setAngvel({
+            x: 0,
+            y: 1,
+            z: 0
+        })
+    })
 
-                        {  //  <mesh geometry={nodes.block_2.geometry} material={materials['Материал']} />
 
-                            //
-                            //<primitive object={nodes.block}/>
-                        }
-                        <mesh geometry={nodes.plane.geometry} material={materials['plane']}/>
-                        <mesh geometry={nodes.doroga.geometry} material={materials['asvalt']}/>
-                        <mesh geometry={nodes.arka.geometry} material={materials['Material.005']}/>
-                        <mesh geometry={nodes.bardur.geometry} material={materials['tratuar']}/>
-                    </group>
-                </RigidBody>
-                <RigidBody colliders="trimesh" type="fixed">
-                    <group>
-                        <primitive object={nodes.building_1}/>
-                        <primitive object={nodes.building_2}/>
-                        <primitive object={nodes.building_3}/>
-                        <primitive object={nodes.building_4}/>
-                        <primitive object={nodes.building_5}/>
-                        <primitive object={nodes.zabor_1}/>
-                    </group>
-                </RigidBody>
-                <primitive object={nodes.desirefx_me_1}/>
-            </group>
-
-            {/*cityData.map((el)=><City position={[el.x,el.y,el.z]}/>)*/}
-            {/*<CityBackground file={'./asset/texture/maxresdefault.jpg'}/>*/}
-        </>
-    } else {
-        return <>
-            <group position={props.position} scale={2}>
-                <RigidBody ref={ref} colliders="trimesh" type="fixed">
-                    <group>
-                        <primitive object={nodes.platform}/>
-                    </group>
-                </RigidBody>
-                <RigidBody colliders={"cuboid"} type={"fixed"}>
-                    <group>
-                        <primitive object={nodes.point}/>
-                    </group>
-                </RigidBody>
+    return <>
+        <group ref={ref} position={props.position} scale={2}>
+            <RigidBody colliders="trimesh" type="fixed">
                 <group>
-                    <primitive object={nodes.plane}/>
-                    <primitive object={nodes.fon}/>
-                    <primitive object={nodes.finih}/>
+                    <primitive object={nodes.platform}/>
+                </group>
+            </RigidBody>
+            <RigidBody ref={block} colliders="trimesh" type="kinematicVelocity">
+                <primitive object={nodes.block}/>
+            </RigidBody>
+            <RigidBody name={"point"} colliders={"cuboid"} sensor={true} type={"fixed"} onIntersectionEnter={(e) => {
+                setPoint("green")
+           let levels = get("lockr_levels").map((el)=>{
+                if(el.level === props.level){
+                    el.playerPosition = [e.rigidBodyObject.position.x,e.rigidBodyObject.position.y,e.rigidBodyObject.position.z]
+                }
+                return el;
+                })
+                set("lockr_levels",levels);
+            }}>
+                <group>
+                    <mesh geometry={nodes.point.geometry} material-color={point}/>
                 </group>
 
-
+            </RigidBody>
+            <group>
+                <primitive object={nodes.plane}/>
+                <primitive object={nodes.fon}/>
+                <primitive object={nodes.finih}/>
             </group>
 
-        </>
-    }
+
+        </group>
+
+    </>
+
 }

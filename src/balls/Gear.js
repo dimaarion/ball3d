@@ -3,9 +3,10 @@ import {useEffect, useRef, useState} from "react";
 import {useFrame} from "@react-three/fiber";
 import {Vector3} from "three";
 import {routable} from "../actions";
-import {RigidBody, useRevoluteJoint} from "@react-three/rapier";
+import {BallCollider, RigidBody, useRevoluteJoint} from "@react-three/rapier";
 import * as THREE from "three";
 import Controller from "ecctrl";
+import {get,set} from "lockr"
 
 
 
@@ -13,9 +14,10 @@ export default function Gear(props){
     const body = useRef()
     const wheel = useRef();
     const [, get] = useKeyboardControls();
-
     const carRef = useRef();
+    const {nodes, materials,animations} = useGLTF('./asset/model/wheel-tree.glb');
 
+//console.log(nodes)
     const speed = props.speed;
     const turnSpeed = props.control;
     useFrame((state,delta)=>{
@@ -67,10 +69,16 @@ export default function Gear(props){
     })
 
     return <>
-<Controller  camInitDir={{x:routable(20),y:routable(90)}}  friction={props.friction} disableControl={true} turnSpeed={1} camInitDis={-20}   colliders={"hull"}  ref={carRef}  type={"dynamic"} mass={props.mass} >
+<Controller name={"player"}  camInitDir={{x:routable(20),y:routable(90)}}  friction={props.friction} disableControl={true} turnSpeed={1} camInitDis={-20}   colliders={"hull"}  ref={carRef}  type={"dynamic"} mass={props.mass} >
+<group scale={0.3} rotation={[routable(90),0,0]}>
+    <mesh geometry={nodes.wheel.geometry}  />
+</group>
 
-    <Gltf src={'./asset/model/wheel-tree.glb'} scale={0.5} rotation={[0,Math.PI / 2,0]}/>
 
+<BallCollider args={[5,5,5]} sensor={true} onIntersectionEnter={(e)=> {
+
+
+}} />
 </Controller>
 
     </>

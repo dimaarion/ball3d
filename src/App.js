@@ -9,7 +9,7 @@ import {
     useGLTF, OrbitControls, PositionalAudio, CameraControls, Gltf, PerspectiveCamera, OrthographicCamera,
 } from "@react-three/drei"
 
-import * as THREE from "three";
+
 import Platform from "./components/Platform";
 import {useSelector} from "react-redux";
 import Pause from "./components/Pause";
@@ -21,10 +21,9 @@ import Garage from "./components/Garage";
 import garage from "./assets/garage.json"
 import level from "./assets/level.json"
 import {Physics} from '@react-three/rapier'
-import Player from "./balls/Player";
-import CityBackground from "./components/CityBackground";
 import Gear from "./balls/Gear";
-import Car2 from "./components/Car2";
+import {get, set} from "lockr";
+import Level_1 from "./Levels/Level_1";
 
 
 export default function App() {
@@ -37,7 +36,9 @@ export default function App() {
     const sound = useRef();
 
 
-
+    if (!get("lockr_levels")) {
+        set("lockr_levels", level)
+    }
 
 
     const keyboardMap = [
@@ -46,23 +47,23 @@ export default function App() {
         {name: "leftward", keys: ["ArrowLeft", "a", "A"]},
         {name: "rightward", keys: ["ArrowRight", "d", "D"]},
         {name: "jump", keys: ["Space"]},
-        {name: "run", keys: ["Shift"] },
+        {name: "run", keys: ["Shift"]},
         // Optional animation key map
-        { name: "action1", keys: ["1"] },
-        { name: "action2", keys: ["2"] },
-        { name: "action3", keys: ["3"] },
-        { name: "action4", keys: ["KeyF"] },
+        {name: "action1", keys: ["1"]},
+        {name: "action2", keys: ["2"]},
+        {name: "action3", keys: ["3"]},
+        {name: "action4", keys: ["KeyF"]},
     ];
 
     const keyboardMap2 = [
-        { name: 'forward', keys: ['ArrowUp', 'KeyW'] },
-        { name: 'backward', keys: ['ArrowDown', 'KeyS'] },
-        { name: 'left', keys: ['ArrowLeft', 'KeyA'] },
-        { name: 'right', keys: ['ArrowRight', 'KeyD'] },
-        { name: 'run', keys: ['Shift'] },
-        { name: 'brake', keys: ['Space'] },
-        { name: 'gearUp', keys: ['Period'] },
-        { name: 'gearDown', keys: ['Comma'] },
+        {name: 'forward', keys: ['ArrowUp', 'KeyW']},
+        {name: 'backward', keys: ['ArrowDown', 'KeyS']},
+        {name: 'left', keys: ['ArrowLeft', 'KeyA']},
+        {name: 'right', keys: ['ArrowRight', 'KeyD']},
+        {name: 'run', keys: ['Shift']},
+        {name: 'brake', keys: ['Space']},
+        {name: 'gearUp', keys: ['Period']},
+        {name: 'gearDown', keys: ['Comma']},
     ];
 
     useEffect(() => {
@@ -80,8 +81,10 @@ export default function App() {
         return () => {
             document.removeEventListener("visibilitychange", handleVisibilityChange);
         };
-    }, []);
 
+
+    }, []);
+    console.log(get("lockr_levels"))
 
     return (
         <>
@@ -96,44 +99,47 @@ export default function App() {
             <StartGame>
                 <Canvas shadows camera={{fov: 45}}>
 
-                    <hemisphereLight  intensity={0.8} />
+                    <hemisphereLight intensity={0.8}/>
 
-                    <directionalLight position={[10, 30, 5]} intensity={2} />
+                    <directionalLight position={[10, 30, 5]} intensity={2}/>
 
-                        <Sky />
+                    <Sky/>
 
                     {
-                       // <Environment  ground={{scale:500,radius:5000,height:1000}} files={'./asset/texture/plane6.jpg'} />
+                        // <Environment  ground={{scale:500,radius:5000,height:1000}} files={'./asset/texture/plane6.jpg'} />
                     }
 
 
-                        <Physics debug={false} gravity={[0, -30, 0]} paused={pause}>
-                            <KeyboardControls map={keyboardMap}>
-                            {level.filter((el) => el.level === 1).map((el) => <Platform key={el.level + "platform"}
-                                                                                        url={el.model}
-                                                                                        position={el.position}
-                                                                                        actionsArray={el.animations}/>)}
+                    <Physics debug={true} gravity={[0, -30, 0]} paused={pause}>
+                        <KeyboardControls map={keyboardMap}>
+                            {get("lockr_levels").filter((el) => el.level === 1).map((el) => <Platform
+                                key={el.level + "platform"}
+                                url={el.model}
+                                position={el.position}
+                                actionsArray={el.animations}
+                                level={el.level}
+                            />)}
 
                             {garage.filter((el) => el.id === 1 && !restart).map((el) => <Gear url={el.model}
-                                                                                                 position={el.position}
-                                                                                                 key={el.id}
-                                                                                                 friction={el.friction}
-                                                                                                 mass={el.mass}
-                                                                                                 jump={el.jump}
-                                                                                                 control={el.control}
-                                                                                                 speed={el.speed}/>)}
+                                                                                              position={el.position}
+                                                                                              key={el.id}
+                                                                                              friction={el.friction}
+                                                                                              mass={el.mass}
+                                                                                              jump={el.jump}
+                                                                                              control={el.control}
+                                                                                              speed={el.speed}/>)}
 
-                    </KeyboardControls>
-                        </Physics>
+                        </KeyboardControls>
+                    </Physics>
 
-                        <PositionalAudio
-                            ref={sound}
-                            hasPlaybackControl={true}
-                            autoplay={true}
-                            loop={false}
-                            url="./asset/sound/y2mate.com - Dmitriy Lukyanov_Underwater.mp3"
-                            distance={music}
-                        />
+                    <PositionalAudio
+                        ref={sound}
+                        hasPlaybackControl={true}
+                        autoplay={true}
+                        loop={false}
+                        url="./asset/sound/y2mate.com - Dmitriy Lukyanov_Underwater.mp3"
+                        distance={music}
+                    />
 
 
                 </Canvas>

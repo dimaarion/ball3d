@@ -7,7 +7,7 @@
     "price": 100,
     "speed": 5,
     "control": 2,
-    "friction": 0.5,
+    "friction": 0.1,
     "mass": 1,
     "position": [0,5,0],
     "jump": 10
